@@ -15,40 +15,11 @@ async function cargarPaquetes() {
                 <td>${paquete.precio}</td>
                 <td>${paquete.descripcion}</td>
                 <td>
-                    Hola
+                    <button onclick="eliminarPaquete(${paquete.id})">Eliminar</button>
+                    <button onclick="actualizarPaquete(${paquete.id})">Actualizar</button>
                 </td>
             `;
             tbody.appendChild(row);
-
-            // // Event listener para los botones de borrar
-            // const botonBorrar = document.querySelectorAll('.delete'); // capturo todos los botones de borrar
-            // botonBorrar.forEach(boton => { // por cada elemento de borrar, a cada uno crearle un addEventListener
-            //     boton.addEventListener('click', async function () {
-            //         const id = boton.dataset.id; // declaro el id del usuario, esto viene de que cuando creamos los botones le pusimos ese data-id
-            //         try {
-            //             const response = await fetch(`http://localhost:4001/usuarios/usuarioABorrar?id=${id}`, { // hago la peticion al endpoint para el borrado
-            //                 method: 'DELETE'
-            //             });
-            //             if (!response.ok) { // si no lo logro borrar
-            //                 throw new Error('Error al borrar el usuario');
-            //             }
-            //             // Si el borrado es exitoso, volver a cargar la tabla
-            //             fetchData();
-            //         } catch (error) {
-            //             console.error(error);
-            //         }
-            //     });
-            // });
-
-            // // Añadir evento de clic a los botones de actualización, cada boton, si le hago click, me redirecciona
-            // // a una pagina de la siguiente forma: actualizacionUsuario.html?id=1
-            // const updateButtons = document.querySelectorAll('.update'); // capturo todos los botones de actualizar
-            // updateButtons.forEach(button => { // por cada boton actualizar, declaro un evento de forma individual
-            //     button.addEventListener('click', () => {
-            //         const userId = button.dataset.id; // declaro el id del usuario, esto viene de que cuando creamos los botones le pusimos ese data-id
-            //         window.location.href = `actualizacionUsuario.html?id=${userId}`;
-            //     });
-            // });
         });
 
     } catch (error) {
@@ -72,7 +43,8 @@ async function buscarPaquetes() {
                 <td>${paquete.precio}</td>
                 <td>${paquete.descripcion}</td>
                 <td>
-                    Hola
+                    <button onclick="eliminarPaquete(${paquete.id})">Eliminar</button>
+                    <button onclick="actualizarPaquete(${paquete.id})">Actualizar</button>
                 </td>
             `;
             tbody.appendChild(row);
@@ -125,13 +97,6 @@ async function agregarPaquete() {
         descripcion: form.descripcion.value,
     }
 
-    // {
-    //     "destino": "Córdoba, Córdiba",
-    //     "duracion": "10 dias",
-    //     "precio": 2,
-    //     "descripcion": "Aguante talleres"
-    // }
-
     try {
         await fetch('http://localhost:4001/paquetes/crear', { // envio los datos, parseandolos a un JSON
             method: 'POST', // especifico que lo que quiero hacer es un post
@@ -145,12 +110,26 @@ async function agregarPaquete() {
     } catch (error) {
         console.log(error)
     }
-
 }
 
 // Función para eliminar un paquete
-function eliminarPaquete(id) {
+async function eliminarPaquete(id) {
+    try {
+        await fetch(`http://localhost:4001/paquetes/${id}`, { // hago la peticion al endpoint para el borrado
+            method: 'DELETE'
+        });
+
+        // Si el borrado es exitoso, volver a cargar la tabla
+        cargarPaquetes();
+    } catch (error) {
+        console.error(error);
+    }
 }
 
+function actualizarPaquete(id) {
+    window.location.href = `putForm.html?id=${id}`;
+}
+
+
 // Cargar la lista de paquetes al cargar la página
-await cargarPaquetes();
+cargarPaquetes();

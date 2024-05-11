@@ -52,6 +52,17 @@ app.get('/paquetes', async (req, res) => {
     }
 });
 
+
+app.get("/paquetes/:id", async (req, res) => {
+    try {
+        const paquete = await Paquete.findByPk(req.params.id)
+        return res.json(paquete.dataValues)
+    } catch (error) {
+        return res.status(404).json({ error: "No encontre los paquetes :(" })
+        // 404 significa "NO ENCONTRE"
+    }
+})
+
 // Endpoint para buscar por descripción
 app.get('/paquetes/byDescripcion', async (req, res) => {
     const { desc } = req.query
