@@ -94,7 +94,7 @@ app.get("/paquetes/byPais/:pais", async (req, res) => {
     }
 })
 
-// RARO... RECLAAMR EN PARCIAL SI ESTA MAL EL MODELO
+
 app.post("/paquetes/crear", async (req, res) => {
     try {
         if (!req.body.destino || !req.body.duracion || !req.body.precio || !req.body.descripcion) {

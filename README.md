@@ -10,36 +10,36 @@ Los estudiantes recibirán un código base para una aplicación web que incluye 
 
 ### Requisitos del Backend
 
-*   Implementar una ruta GET para recuperar todos los paquetes de viajes.
-*   Implementar una ruta GET para filtrar paquetes por destino (país) usando parámetros de ruta (ej: `/paquetes/:pais`).
-*   Implementar una ruta GET para buscar paquetes por descripción usando query strings (ej: `/paquetes/consulta?q=aventura`).
+- Implementar una ruta GET para recuperar todos los paquetes de viajes.
+- Implementar una ruta GET para filtrar paquetes por destino (país) usando parámetros de ruta (ej: `/paquetes/:pais`).
+- Implementar una ruta GET para buscar paquetes por descripción usando query strings (ej: `/paquetes/consulta?q=aventura`).
 
 ### Requisitos del Frontend
 
-*   Completar la función para cargar la grilla con todos los paquetes de viajes al iniciar la aplicación.
-*   Implementar las funciones para filtrar la grilla por país y buscar por palabra clave.
-*   Crear un formulario para agregar un nuevo paquete de viajes al final de la grilla.
-*   Agregar un botón de eliminar en cada fila de la grilla para eliminar el paquete correspondiente.
+- Completar la función para cargar la grilla con todos los paquetes de viajes al iniciar la aplicación.
+- Implementar las funciones para filtrar la grilla por país y buscar por palabra clave.
+- Crear un formulario para agregar un nuevo paquete de viajes al final de la grilla.
+- Agregar un botón de eliminar en cada fila de la grilla para eliminar el paquete correspondiente.
 
 ### Ejemplos de Rutas
 
-*   Obtener todos los paquetes: `GET /paquetes`
-*   Filtrar por país (ej: Argentina): `GET /paquetes/Argentina` El filtro debe buscar los que contengan la palabra 
-*   Buscar por descripción (ej: playa): `GET /paquetes?q=playa`
-*   Eliminar un paquete por id (ej: playa): `DELETE /paquetes/1`
-*   Cargar un nuevo paquete: `POST /paquetes`
+- Obtener todos los paquetes: `GET /paquetes`. LISTO
+- Filtrar por país (ej: Argentina): `GET /paquetes/Argentina` El filtro debe buscar los que contengan la palabra. LSITO
+- Buscar por descripción (ej: playa): `GET /paquetes?q=playa`. LISTO
+- Eliminar un paquete por id (ej: playa): `DELETE /paquetes/1`. LISTO
+- Cargar un nuevo paquete: `POST /paquetes`. LES DAN MAL LAS COSAS ESTOS PROFES!!!
 
 ### Instrucciones
 
-1.  **Configuración del Backend:** Se proporcionará el código base para la aplicación Node.js. Los estudiantes deben completar la implementación de las rutas mencionadas en los requisitos del backend. 
+1.  **Configuración del Backend:** Se proporcionará el código base para la aplicación Node.js. Los estudiantes deben completar la implementación de las rutas mencionadas en los requisitos del backend.
 2.  **Configuración del Frontend:** Se proporcionará un archivo HTML básico y el código JavaScript inicial. Los estudiantes deben completar las funciones para cargar, filtrar, buscar y manipular la grilla de paquetes de viajes, como se describe en los requisitos del frontend.
 
 ### Criterios de Evaluación
 
-*   **Funcionalidad:** La aplicación funciona como se describe, completando correctamente las partes del código requeridas.
-*   **Calidad del Código:** El código es limpio, bien organizado y adecuadamente comentado.
-*   **Diseño:** El frontend muestra los paquetes de viajes de manera clara y organizada, con opciones de filtrado y búsqueda fáciles de usar.
-*   **Manejo de Errores:** La aplicación maneja posibles errores de forma adecuada, tanto en el backend como en el frontend.
+- **Funcionalidad:** La aplicación funciona como se describe, completando correctamente las partes del código requeridas.
+- **Calidad del Código:** El código es limpio, bien organizado y adecuadamente comentado.
+- **Diseño:** El frontend muestra los paquetes de viajes de manera clara y organizada, con opciones de filtrado y búsqueda fáciles de usar.
+- **Manejo de Errores:** La aplicación maneja posibles errores de forma adecuada, tanto en el backend como en el frontend.
 
 ### Pruebas y Ejecución
 
